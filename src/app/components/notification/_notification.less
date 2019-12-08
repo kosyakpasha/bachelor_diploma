@@ -1,0 +1,90 @@
+@import ( reference ) "~@less-helpers-module/_mixins.less";
+@import ( reference ) "~@less-helpers-module/_variables.less";
+
+/* NOTIFICATION */
+  
+.notification {
+  position: fixed;
+  bottom: 30/@px;
+  right: 30/@px;
+  display: flex;
+  align-items: center;
+  border-radius: 5/@px;
+  border: 1/@px solid @white;
+  color: @white;
+  box-shadow: 0/@px 5/@px 8.3/@px 8.7/@px rgba(34, 56, 73, 0.9);
+  width: 450/@px;
+  z-index: 2;
+
+  &__text {
+    .font(@heading-2);
+    margin: 0 14/@px;
+    white-space: nowrap;
+  }
+
+  &__icon,
+  &__button {
+    font-size: 24/@px;
+  }
+
+  &__button:hover {
+    opacity: 0.7;
+    transition: all 0.2s linear;
+  }
+
+  &__icon {
+    padding: 13/@px 16/@px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &--success {
+    background: @low-active;
+
+    .notification__icon {
+      background: @low;
+    }
+  }
+
+  &--error {
+    background: @urgent-active;
+
+    .notification__icon {
+      background: @urgent;
+    }
+  }
+
+  &--warning {
+    background: @hight-active;
+
+    .notification__icon {
+      background: @hight;
+    }
+  }
+
+  &--info {
+    background: @education-active;
+
+    .notification__icon {
+      background: @education;
+    }
+  }
+
+  &__button {
+    font-size: 0;
+
+    .notification__icon {
+      font-size: 24/@px;
+      background: transparent;
+      color: @white;
+    }
+  }
+
+}
+
+/* NOTIFICATION */

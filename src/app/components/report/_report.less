@@ -1,0 +1,125 @@
+@import ( reference ) "~@less-helpers-module/_mixins.less";
+@import ( reference ) "~@less-helpers-module/_variables.less";
+
+/* REPORT */
+
+.report {
+
+  &__title {
+    text-align: left;
+    .responsive(@tablet, {
+      position: relative;
+      top: -41px;
+      text-align: left !important;
+      display: inline-block;
+    });
+  }
+
+  &__container {
+    max-width: 580px;
+    margin: auto;
+  }
+
+  &__legend {
+    display: flex;
+    justify-content: space-between;
+    color: #8da5b8;
+    max-width: 275px;
+    margin: 25px auto;
+    .font(@heading-4);
+  }
+
+  &__legend-item {
+    position: relative;
+  }
+
+  &__legend-item:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    width: 8px;
+    height: 8px;
+
+    transform: translateY(-50%);
+  }
+
+  &__legend-item--urgent:before {
+    background: #f15a4a;
+  }
+
+  &__legend-item--high:before {
+    background: #fea741;
+  }
+
+  &__legend-item--middle:before {
+    background: #fddc43;
+  }
+
+  &__legend-item--low:before {
+    background: #1abb9b;
+  }
+
+  &__legend-item--failed:before {
+    background: #8da5b8;
+  }
+}
+
+.highcharts-exporting-group,
+.highcharts-title,
+.highcharts-axis.highcharts-yaxis {
+  display: none;
+}
+
+.highcharts-background {
+  fill: transparent;
+}
+
+.highcharts-point {
+  stroke: none;
+}
+
+.highcharts-axis-labels text {
+  fill: #fff !important;
+  color: #fff !important;
+}
+
+.highcharts-grid-line {
+  stroke: #345168 !important;
+}
+
+.highcharts-tick,
+.highcharts-xaxis-grid .highcharts-grid-line {
+  opacity: 0 !important;
+}
+
+.highcharts-xaxis-grid .highcharts-grid-line:last-child {
+  opacity: 1 !important;
+  stroke: #fff !important;
+}
+
+.highcharts-credits {
+  display: none !important;
+}
+
+.highcharts-point:hover {
+  cursor: pointer;
+}
+
+.highcharts-tooltip-box + text {
+  .font(@tooltip);
+  color: #3c5162 !important;
+}
+
+.highcharts-tooltip-box {
+  stroke: #4c6374 !important;
+}
+
+.tabs-controls--report-top,
+.tabs-controls--report-bottom {
+  position: static;
+  justify-content: center;
+  margin: 40/@px 0;
+}
+
+/* REPORT */

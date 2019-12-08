@@ -1,0 +1,1 @@
+There is productivity application for bachelor diploma.

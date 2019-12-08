@@ -1,0 +1,164 @@
+
+    <div class="task-list task-list--daily">
+      <ul class="task-list-tabs__select-all tabs-controls tabs-controls--daily tabs-controls--daily-hidden">
+        <li class="tabs-controls__item tabs-controls__item-daily-select">
+          Select All
+        </li>
+        <li class="tabs-controls__item tabs-controls__item-daily-deselect">
+          Deselect All
+        </li>
+      </ul>
+      <div class="task-list--daily-wrapper">
+        <ul class="task-list-tabs__task-list task-list task-list--daily">
+          {{#each daily}}
+            <li class="task task--{{getCategories this}} task--{{getPriority this}} {{getOverdueClass this}}" data-id="{{id}}">
+              <div class="task__left">
+                <div class="task__category-label"></div>
+                <div class="task__delete-cancel task__delete-cancel-close">
+                  <span class="task__date-icon task__date-icon-close icon-close"></span>
+                </div>
+                <div class="task__delete-cancel task__delete-cancel-trash">
+                  <span class="task__date-icon task__date-icon-trash icon-trash"></span>
+                </div>
+                {{getDate this}}
+                <div class="task__text">
+                  <h3 class="task__title">
+                    {{title}}
+                  </h3>
+                  <p class="task__desc">
+                    {{description}}
+                  </p>
+                </div>
+              </div>
+              <div class="task__right">
+                <ul class="task__controls controls">
+                  <li class="controls__item">
+                    <span class="controls__icon icon icon-arrows-up" title="Move task to Daily List"></span>
+                    <span class="controls__icon icon icon-edit" title="Edit task"></span>
+                  </li>
+                </ul>
+                <div class="task__priority-block">
+                  <span class="task__icon icon-timer" title="Go to Timer"></span>
+                  <span class="task__icon icon-tomato"></span>
+                  <div class="task__priority-num">
+                    {{getEstimation this}}
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="task-list--comleted-wrapper task-list--hidden">      
+        <ul class="task-list-tabs__task-list task-list task-list--completed">
+          {{#each completed}}
+            <li class="task task--{{getCategories this}} task--{{getPriority this}} {{getOverdueClass this}} task--done" data-id="{{id}}">
+              <div class="task__left">
+                <div class="task__category-label"></div>
+                <div class="task__delete-cancel task__delete-cancel-close">
+                  <span class="task__date-icon task__date-icon-close icon-close"></span>
+                </div>
+                <div class="task__delete-cancel task__delete-cancel-trash">
+                  <span class="task__date-icon task__date-icon-trash icon-trash"></span>
+                </div>
+                {{getDate this}}
+                <div class="task__text">
+                  <h3 class="task__title">
+                    {{title}}
+                  </h3>
+                  <p class="task__desc">
+                    {{description}}
+                  </p>
+                </div>
+              </div>
+              <div class="task__right">
+                <ul class="task__controls controls">
+                  <li class="controls__item">
+                    <span class="controls__icon icon icon-arrows-up" title="Move task to Daily List"></span>
+                    <span class="controls__icon icon icon-edit" title="Edit task"></span>
+                  </li>
+                </ul>
+                <div class="task__priority-block">
+                  <span class="task__icon icon-tomato"></span>
+                  <div class="task__priority-num">
+                    {{getEstimation this}}
+                  </div>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="task-list task-list--global">
+      <button type='button' class="global-list__button" title="Go to Global List">
+        Global list
+        <span class="global-list__icon icon-global-list-arrow-right"></span>
+      </button>
+      <ul class="task-list-tabs__select-all tabs-controls tabs-controls--global tabs-controls--global-hidden">
+        <li class="tabs-controls__item tabs-controls__item-global-select">
+          Select All
+        </li>
+        <li class="tabs-controls__item tabs-controls__item-global-deselect">
+          Deselect All
+        </li>
+      </ul>
+      <ul class="global-list-tabs__tabs-controls tabs-controls tabs-controls--priority">
+        <li class="tabs-controls__item tabs-controls__item--active">
+          All
+        </li>
+        <li class="tabs-controls__item">
+          Urgent
+        </li>
+        <li class="tabs-controls__item">
+          Hight
+        </li>
+        <li class="tabs-controls__item">
+          Middle
+        </li>
+        <li class="tabs-controls__item">
+          Low
+        </li>
+      </ul>
+    {{#each global}}
+      <ul class="task-list-tabs__task-list task-list task-list--global">
+        {{#each this}}
+        <li class="task task--{{getCategories this}} task--{{getPriority this}} {{isGlobalTaskLi this}} {{getOverdueClass this}}" data-id="{{id}}" data-priority="{{priority}}">
+          <div class="task__left">
+            <div class="task__category-label"></div>
+            <div class="task__delete-cancel task__delete-cancel-close">
+              <span class="task__date-icon task__date-icon-close icon-close"></span>
+            </div>
+            <div class="task__delete-cancel task__delete-cancel-trash">
+              <span class="task__date-icon task__date-icon-trash icon-trash"></span>
+            </div>
+            {{getDate this}}
+            <div class="task__text">
+              <h3 class="task__title">
+                {{title}}
+              </h3>
+              <p class="task__desc">
+                {{description}}
+              </p>
+            </div>
+          </div>
+          <div class="task__right">
+            <ul class="task__controls controls">
+              <li class="controls__item">
+                <span class="controls__icon icon icon-arrows-up" title="Move task to Daily List"></span>
+                <span class="controls__icon icon icon-edit" title="Edit task"></span>
+              </li>
+            </ul>
+            <div class="task__priority-block">
+              <span class="task__icon icon-tomato"></span>
+              <div class="task__priority-num">
+                {{getEstimation this}}
+              </div>
+            </div>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    {{/each}}
+  </div>
+</div>

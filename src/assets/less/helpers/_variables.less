@@ -1,0 +1,292 @@
+@background-color: #2a3f50;
+@px: 16rem;
+@desktop: ~"(min-width: 1280px)";
+@tablet: ~"(max-width: 1280px)";
+@mobile: ~"(max-width: 768px)";
+@mobile-min: ~"(max-width: 520px)";
+
+@size: {
+  desktop-screen: 1280px;
+  laptop-screen: 1179px;
+  mobile-l-screen: 768px;
+  mobile-p-screen: 520px;
+}
+
+@message: {
+  desktop-screen: 36px;
+  laptop-screen: 24px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 24px;
+  font-family: 'Roboto-Light';
+}
+
+@heading-1: {
+  desktop-screen: 28px;
+  laptop-screen: 32px;
+  mobile-l-screen: 32px;
+  mobile-p-screen: 32px;
+  font-family: 'Roboto-Bold';
+}
+
+@heading-2: {
+  desktop-screen: 16px;
+  laptop-screen: 16px;
+  mobile-l-screen: 16px;
+  mobile-p-screen: 16px;
+  font-family: 'Roboto-Bold';
+}
+
+@heading-3: {
+  desktop-screen: 19px;
+  laptop-screen: 22px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 19px;
+  font-family: 'Roboto-Medium';
+}
+
+@heading-4: {
+  desktop-screen: 11px;
+  laptop-screen: 14px;
+  mobile-l-screen: 11px;
+  mobile-p-screen: 14px;
+  font-family: 'Roboto-Bold';
+}
+
+@subtitle: {
+  desktop-screen: 17px;
+  laptop-screen: 21px;
+  mobile-l-screen: 19px;
+  mobile-p-screen: 19px;
+  font-family: 'Roboto-Regular';
+}
+
+@paragraph: {
+  desktop-screen: 16px;
+  laptop-screen: 19px;
+  mobile-l-screen: 17px;
+  mobile-p-screen: 15px;
+  font-family: 'Roboto-Regular';
+}
+
+@caption: {
+  desktop-screen: 14px;
+  laptop-screen: 14px;
+  mobile-l-screen: 14px;
+  mobile-p-screen: 14px;
+  font-family: 'PTSans-Regular';
+}
+
+@pomodoras-count: {
+  desktop-screen: 24px;
+  laptop-screen: 28px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 30px;
+  font-family: 'PTSans-Bold';
+}
+
+@timer: {
+  desktop-screen: 24px;
+  laptop-screen: 28px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 30px;
+  font-family: 'PTSans-Regular';
+}
+
+@tooltip: {
+  desktop-screen: 12px;
+  laptop-screen: 12px;
+  mobile-l-screen: 12px;
+  mobile-p-screen: 12px;
+  font-family: 'Roboto-Bold';
+}
+
+@global-list: {
+  desktop-screen: 20px;
+  laptop-screen: 24px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 24px;
+  font-family: 'PTSans-Bold';
+}
+
+@tabs-controls: {
+  desktop-screen: 20px;
+  laptop-screen: 24px;
+  mobile-l-screen: 24px;
+  mobile-p-screen: 24px;
+  font-family: 'PTSans-Regular';
+}
+
+@date-num: {
+  desktop-screen: 27px;
+  laptop-screen: 29px;
+  mobile-l-screen: 29px;
+  mobile-p-screen: 29px;
+  font-family: 'PTSans-Bold';
+}
+
+@tools-icon: {
+  desktop-screen: 14px;
+  laptop-screen: 20px;
+  mobile-l-screen: 20px;
+  mobile-p-screen: 20px;
+  font-family: 'Roboto-Bold';
+}
+
+@popup-input-title: {
+  desktop-screen: 14px;
+  laptop-screen: 14px;
+  mobile-l-screen: 16px;
+  mobile-p-screen: 16px;
+  font-family: 'Roboto-Regular';
+}
+
+@cycle-time: {
+  desktop-screen: 12px;
+  laptop-screen: 12px;
+  mobile-l-screen: 12px;
+  mobile-p-screen: 12px;
+  font-family: 'PTSans-Regular'; 
+}
+
+// PRIMARY COLORS//
+@madison: rgb(42, 63, 80);
+@nepal: rgb(141, 165, 184);
+@silver: rgb(200, 200, 200);
+@white: rgb(255, 255, 255);
+@spray: rgb(130, 199, 224);
+@grey: rgb(127, 127, 127);
+@dark-grey: rgb(159, 159, 159);
+@deep-sea: rgb(14, 140, 116);
+@dark-coral: rgb(201, 77, 71);
+@mahogany: rgb(188, 53, 53);
+@pelorous: rgb(35, 128, 181);
+@tomato: rgb(247, 92, 76);
+
+// PRIORITY COLORS //
+@urgent: rgb(247, 92, 76);
+@urgent-active: rgb(201, 77, 71);
+@hight: rgb(255, 168, 55);
+@hight-active: rgb(240, 142, 25);
+@middle: rgb(253, 220, 67);
+@middle-active: rgb(232, 189, 10);
+@low: rgb(26, 188, 156);
+@low-active: rgb(22, 160, 133);
+
+// CATEGORIES COLORS //
+@work: rgb(255, 178, 0);
+@work-active: rgb(221, 143, 5);
+@education: rgb(89, 171, 227);
+@education-active: rgb(54, 139, 197);
+@hobby: rgb(180, 112, 208);
+@hobby-active: rgb(152, 73, 184);
+@sport: rgb(225, 108, 101);
+@sport-active: rgb(183, 78, 75);
+@other: rgb(0, 212, 217);
+@other-active: rgb(4, 165, 165);
+
+// CUSTOM //
+@border-bottom: rgb(66, 88, 105);
+@tooltip-spray: rgba(130, 199, 224, 0.9);
+@task-done: rgba(212, 217, 220, 0.9);
+@popup-overlay: rgba(13, 19, 24, 0.7);
+
+@green: {
+  default: @low;
+  hover: @low-active;
+  focus: @low-active;
+  visited: @deep-sea;
+  active: @deep-sea;
+}
+
+@blue: {
+  default: @education;
+  hover: @education-active;
+  focus: @education-active;
+  visited: @pelorous;
+  active: @pelorous;
+}
+
+@red: {
+  default: @urgent;
+  hover: @urgent-active;
+  focus: @urgent-active;
+  visited: @mahogany;
+  active: @mahogany;
+}
+
+@btn-dark: {
+  default: @nepal;
+  hover: @spray;
+  focus: @spray;
+  visited: @spray;
+  active: @spray;
+}
+
+@btn-light: {
+  default: @silver;
+  hover: @nepal;
+  focus: @spray;
+  visited: @nepal;
+  active: @nepal;
+}
+
+@text-dark: {
+  default: @dark-gray;
+  hover: @grey;
+  focus: @grey;
+  visited: @grey;
+  active: @grey;
+}
+
+@text-light: {
+  default: @nepal;
+  hover: @white;
+  focus: @white;
+  visited: @white; 
+  active: @white;
+}
+
+@top-menu: {
+  default: @nepal;
+  hover: @spray;
+  focus: @spray;
+  visited: @spray;
+  active: @white;
+}
+
+@tabs: {
+  default: @nepal;
+  hover: @spray;
+  focus: @spray;
+  visited: @spray; 
+  active: @white;
+}
+
+@category-colors:
+  work @work,
+  work-active @work-active,
+  education @education,
+  education-active @education-active,
+  hobby @hobby,
+  hobby-active @hobby-active,
+  sport @sport,
+  sport-active @sport-active,
+  other @other,
+  other-active @other-active;
+
+@priorities-color:
+  urgent @urgent,
+  urgent-active @urgent-active,
+  hight @hight,
+  hight-active @hight-active,
+  middle @middle,
+  middle-active @middle-active,
+  low @low,
+  low-active @low-active;
+
+@categories-names:
+  work "work",
+  education "education",
+  hobby "hobby",
+  sport "sport",
+  other "other";

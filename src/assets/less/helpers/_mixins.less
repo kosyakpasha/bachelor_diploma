@@ -1,0 +1,190 @@
+.font(@typography-style){
+  font-family: @typography-style[font-family];
+  font-size: @typography-style[desktop-screen];
+
+  @media (max-width: @size[desktop-screen]) {
+    font-size: @typography-style[desktop-screen];
+  }
+
+  @media (max-width: @size[laptop-screen]) {
+    font-size: @typography-style[laptop-screen];
+  }
+
+  @media (max-width: @size[mobile-l-screen]) {
+    font-size: @typography-style[mobile-l-screen];
+  }
+
+  @media (max-width: @size[mobile-p-screen]) {
+    font-size: @typography-style[mobile-l-screen];
+  }
+}
+
+.btn(@type, @property){
+  @{property}: @type[default];
+  transition: all 0.3s ease;
+
+  &:hover {
+    @{property}: @type[hover];
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  &:focus {
+    @{property}: @type[focus];
+    outline: 0;
+  }
+
+  &:visited {
+    @{property}: @type[visited];
+  }
+
+  &:active {
+    @{property}: @type[active];
+  }
+}
+
+.category-color(@selector; @arr; @i: 0) when (@i <= length(@arr)) {
+  @item: extract(@arr, @i);
+  @category: extract(@item, 1);
+  @color: extract(@item, 2);
+
+  .@{selector}@{category}:before {
+    background: @color;
+  }
+
+  .category-color(@selector; @arr; (@i + 1));
+}
+
+.task-priority(@selector; @arr; @i: 0) when (@i <= length(@arr)){
+  @item: extract(@arr, @i);
+  @category: extract(@item, 1);
+  @color: extract(@item, 2);
+
+  .@{selector}@{category} .task__title {
+    color: @color;
+  }
+
+  .@{selector}@{category} .task__priority-block {
+    background: @color;
+    transition: all 0.3s ease;
+  }
+
+  ul.task-list--daily .@{selector}@{category} .task__priority-block:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .task-priority(@selector; @arr; (@i + 1));
+}
+
+.task-category(@selector; @arr; @i: 0) when (@i <= length(@arr)){
+  @item: extract(@arr, @i);
+  @category: extract(@item, 1);
+  @color: extract(@item, 2);
+
+  .@{selector}@{category} .task__category-label {
+    background: @color;
+  }
+
+  .@{selector}@{category}.task--global{
+    &:before{
+      color: @color;
+    }
+
+    .task__category-label {
+      &:after {
+        border: 4/@px solid @color;
+      }
+
+      &:before {
+        background: @color;
+      }   
+    }
+
+    .controls {
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      &__icon {
+        margin: 13/@px 0 0;
+    
+        &:first-child {
+          margin: 0;
+        }
+
+        &:first-child:before {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .@{selector}@{category}.task--delete-cancel.task--global 
+  .task__category-label:before {
+    top: -23/@px;
+  }
+
+  .@{selector}@{category}.task--delete-cancel.task--global 
+  .task__category-label:after {
+    top: -29/@px;
+  }
+
+  .@{selector}@{category}.task--delete-cancel{
+    &:after {
+      background: @color;
+    }
+  }
+
+  .task-category(@selector; @arr; (@i + 1));
+}
+
+.task-label(@selector; @arr; @i: 0) when (@i <= length(@arr)){
+  @item: extract(@arr, @i);
+  @category: extract(@item, 1);
+  @name: extract(@item, 2);
+
+  .@{selector}@{category}.task--global:first-child,
+  .@{selector}@{category}.task-visible {
+    &:before {
+      content: @name;
+      position: absolute;
+      top: -29/@px;
+      left: 18/@px;
+      text-transform: uppercase;
+      .font(@heading-2);
+    }
+  }
+
+  .task-label(@selector; @arr; (@i + 1));
+}
+
+.radio-btn-color(@selector; @arr; @i: 0) when (@i <= length(@arr)){
+  @item: extract(@arr, @i);
+  @category: extract(@item, 1);
+  @color: extract(@item, 2);
+
+  .@{selector}@{category} {
+    .popup__input:checked ~ .popup__checkmark {
+      border: 4px solid @color;
+    }
+
+    .popup__checkmark:after {
+      background: @color;
+    }
+
+    &:hover .popup__checkmark {
+      background: @color;
+    }
+  }
+
+  .radio-btn-color(@selector; @arr; (@i + 1));
+}
+
+.responsive(@resolution; @rules) {
+  @media only screen and @resolution {
+    @rules();
+  }
+}

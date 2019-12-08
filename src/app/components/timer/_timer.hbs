@@ -1,0 +1,95 @@
+<div class="timer">
+  <button class="timer__prev icon-arrow-left" title="Go to Global List"></button>
+  <button class="timer__next icon-arrow-right timer--hidden" title="Go to Reports"></button>
+  <h2 class="timer__title">
+    {{title}}
+  </h2>
+  <p class="timer__desc">
+    {{description}}
+  </p>
+  <ul class="timer__estimate-list">
+    <li class="timer__estimate-item timer__estimate-pomodoro active-estimate">
+      <button class="timer__estimate-button">
+      </button>
+    </li>
+    {{getEstimate this}}
+    <li class="timer__estimate-item timer__estimate-item--add timer--hidden">
+      <button class="timer__estimate-button">
+        <span class="timer__estimate-icon icon-add timer__estimate-item--add"></span>
+      </button>
+    </li>
+  </ul>
+  <div class="timer__info">
+    <span class="timer__first-text">
+      Let's do it?
+    </span>
+    <span class="timer__time-work timer--hidden">
+      <span class="timer__time-num">
+        {{workTime.value}}
+      </span>
+      <span class="timer__time-word">
+        min
+      </span>
+    </span>
+    <span class="timer__time-break timer--hidden">
+      <span class="timer__time-word">
+        BREAK
+      </span>
+      <span class="timer__time-num">
+        {{shortBreak.value}}
+      </span>
+      <span class="timer__time-word">
+        min
+      </span>
+    </span>
+    <span class="timer__time-break-long timer--hidden">
+      <span class="timer__time-word">
+        BREAK
+      </span>
+      <span class="timer__time-num">
+        {{longBreak.value}}
+      </span>
+      <span class="timer__time-word">
+        min
+      </span>
+    </span>
+    <span class="timer__last-text timer__last-text--break-is-over timer--hidden">
+      Break</br>
+      is over
+    </span>
+    <span class="timer__last-text timer__last-text--completed-task timer--hidden">
+      You</br>
+      Completed</br>
+      Task
+    </span>
+  </div>
+  <audio class="finish-task" src="http://test-name-site-example.zzz.com.ua/japan_gong-namobilu.com.mp3"></audio>
+  <audio class="finish-work-break" src="http://test-name-site-example.zzz.com.ua/temple_bell_sms-namobilu.com.mp3"></audio>
+  <ul class="setting-buttons">
+    <li class="setting-buttons__item setting-buttons__start">
+      <button class="setting-buttons__btn setting-buttons__start setting-buttons__btn_green">
+        Start
+      </button>
+    </li>
+    <li class="setting-buttons__item setting-buttons__fail-pomodoros timer--hidden">
+      <button class="setting-buttons__btn setting-buttons__fail-pomodoros setting-buttons__btn_red">
+        Fail Pomodora
+      </button>
+    </li>
+    <li class="setting-buttons__item setting-buttons__finish-pomodoros timer--hidden">
+      <button class="setting-buttons__btn setting-buttons__finish-pomodoros setting-buttons__btn_green">
+        Finish Pomodora
+      </button>
+    </li>
+    <li class="setting-buttons__item setting-buttons__start-pomodoros timer--hidden">
+      <button class="setting-buttons__btn setting-buttons__start-pomodoros setting-buttons__btn_green">
+        Start Pomodora
+      </button>
+    </li>
+    <li class="setting-buttons__item setting-buttons__finish-task timer--hidden">
+      <button class="setting-buttons__btn setting-buttons__finish-task setting-buttons__btn_blue">
+        Finish Task
+      </button>
+    </li>
+  </ul>
+</div>

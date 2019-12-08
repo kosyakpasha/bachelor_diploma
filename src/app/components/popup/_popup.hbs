@@ -1,0 +1,268 @@
+{{#if add}}
+  <form class="popup">
+  <div class="popup__content">
+    <ul class="popup__right-list">
+      <li class="popup__right-item">
+        <button type="button" class="popup__right-icon icon icon-close"></button>
+      </li>
+      <li class="popup__right-item">
+        <button type="button" class="popup__right-icon icon icon-check"></button>
+      </li>
+    </ul>
+    <h2 class="popup__title">
+      Add Task
+    </h2>
+    <ul class="popup__list">
+      <li class="popup__item">
+        <label class="popup__label" for="title">Title</label>
+        <input class="popup__input popup-label__title" type="text" id="title" name="Title" placeholder="Add title here">
+      </li>
+      <li class="popup__item">
+        <label class="popup__label" for="description">Description</label>
+        <input class="popup__input popup-label__description" type="text" id="description" name="Description" placeholder="Add description here">
+      </li>
+      <li class="popup__item">
+        <div class="popup__label">
+          Category
+        </div>
+        <ul class="popup__sub-list sub-list sub-list--category">
+          <li class="sub-list__item sub-list__item--active">
+            <label class="popup__label popup__label--work">
+              <input class="popup__input" type="radio" name="popup__input-category" value="work" checked="checked">
+              <span class="popup__checkmark"></span>
+              Work
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--education">
+              <input class="popup__input" type="radio" name="popup__input-category" value="education">
+              <span class="popup__checkmark"></span>
+              Education
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--hobby">
+              <input class="popup__input" type="radio" name="popup__input-category" value="hobby">
+              <span class="popup__checkmark"></span>
+              Hobby
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--sport">
+              <input class="popup__input" type="radio" name="popup__input-category" value="sport">
+              <span class="popup__checkmark"></span>
+              Sport
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--other">
+              <input class="popup__input" type="radio" name="popup__input-category" value="other">
+              <span class="popup__checkmark"></span>
+              Other
+            </label>
+          </li>
+        </ul>
+      </li>
+      <li class="popup__item">
+        <label class="popup__label" for="deadline">Deadline</label>
+        <input type="text" class="popup__input" type="text" id="deadline" name="Title" autocomplete="off">
+      </li>
+      <li class="popup__item">
+        <label class="popup__label">Estimation</label>
+        <div class="popup__estimation-list">
+          <input type="radio" id="tomato5" name="rating" value="5" /><label for="tomato5" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato4" name="rating" value="4" /><label for="tomato4" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato3" name="rating" value="3" /><label for="tomato3" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato2" name="rating" value="2" /><label for="tomato2" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato1" name="rating" value="1" checked/><label for="tomato1" class="popup__estimation-label"></label>
+        </div>
+      </li>
+      <li class="popup__item">
+        <div class="popup__label">
+          Priority
+        </div>
+        <ul class="popup__sub-list sub-list sub-list--priority">
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--urgent">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="urgent" checked="checked">
+              <span class="popup__checkmark"></span>
+              Urgent
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--hight">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="hight">
+              <span class="popup__checkmark"></span>
+              Hight
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--middle">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="middle">
+              <span class="popup__checkmark"></span>
+              Middle
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--low">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="low">
+              <span class="popup__checkmark"></span>
+              Low
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</form>
+{{/if}}
+{{#if edit}}
+  <form class="popup">
+  <div class="popup__content">
+    <ul class="popup__left-list">
+      <li class="popup__left-item">
+        <button type="button" class="popup__left-icon icon icon-trash"></button>
+      </li>
+    </ul>
+    <ul class="popup__right-list">
+      <li class="popup__right-item">
+        <button type="button" class="popup__right-icon icon icon-close"></button>
+      </li>
+      <li class="popup__right-item">
+        <button type="button" class="popup__right-icon icon icon-check"></button>
+      </li>
+    </ul>
+    <h2 class="popup__title">
+      Edit Task
+    </h2>
+    <ul class="popup__list">
+      <li class="popup__item">
+        <label class="popup__label" for="title">Title</label>
+        <input class="popup__input popup-label__title" type="text" id="title" name="Title" placeholder="Add title here">
+      </li>
+      <li class="popup__item">
+        <label class="popup__label" for="description">Description</label>
+        <input class="popup__input popup-label__description" type="text" id="description" name="Description" placeholder="Add description here">
+      </li>
+      <li class="popup__item">
+        <div class="popup__label">
+          Category
+        </div>
+        <ul class="popup__sub-list sub-list sub-list--category">
+          <li class="sub-list__item sub-list__item--active">
+            <label class="popup__label popup__label--work">
+              <input class="popup__input" type="radio" name="popup__input-category" value="work" checked="checked">
+              <span class="popup__checkmark"></span>
+              Work
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--education">
+              <input class="popup__input" type="radio" name="popup__input-category" value="education">
+              <span class="popup__checkmark"></span>
+              Education
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--hobby">
+              <input class="popup__input" type="radio" name="popup__input-category" value="hobby">
+              <span class="popup__checkmark"></span>
+              Hobby
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--sport">
+              <input class="popup__input" type="radio" name="popup__input-category" value="sport">
+              <span class="popup__checkmark"></span>
+              Sport
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--other">
+              <input class="popup__input" type="radio" name="popup__input-category" value="other">
+              <span class="popup__checkmark"></span>
+              Other
+            </label>
+          </li>
+        </ul>
+      </li>
+      <li class="popup__item">
+        <label class="popup__label" for="deadline">Deadline</label>
+        <input type="text" class="popup__input" type="text" id="deadline" name="Title" autocomplete="off">
+      </li>
+      <li class="popup__item">
+        <label class="popup__label">Estimation</label>
+        <div class="popup__estimation-list">
+          <input type="radio" id="tomato5" name="rating" value="5" /><label for="tomato5" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato4" name="rating" value="4" /><label for="tomato4" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato3" name="rating" value="3" /><label for="tomato3" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato2" name="rating" value="2" /><label for="tomato2" class="popup__estimation-label"></label>
+          <input type="radio" id="tomato1" name="rating" value="1" checked/><label for="tomato1" class="popup__estimation-label"></label>
+        </div>
+      </li>
+      <li class="popup__item">
+        <div class="popup__label">
+          Priority
+        </div>
+        <ul class="popup__sub-list sub-list sub-list--priority">
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--urgent">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="urgent" checked="checked">
+              <span class="popup__checkmark"></span>
+              Urgent
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--hight">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="hight">
+              <span class="popup__checkmark"></span>
+              Hight
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--middle">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="middle">
+              <span class="popup__checkmark"></span>
+              Middle
+            </label>
+          </li>
+          <li class="sub-list__item">
+            <label class="popup__label popup__label--low">
+              <input class="popup__input" type="radio" name="popup__input-priority" value="low">
+              <span class="popup__checkmark"></span>
+              Low
+            </label>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</form>
+{{/if}}
+{{#if remove}}
+<form class="popup">
+  <div class="popup__content">
+    <ul class="popup__right-list">
+      <li class="popup__right-item">
+        <button type="button" class="popup__right-icon icon icon-close"></button>
+      </li>
+    </ul>
+    <h2 class="popup__title">
+      Remove Task
+    </h2>
+    <p class="popup__remove-text">
+      Are you sure you want to remove selected task(s)?
+    </p>
+    <ul class="task-simple-template__setting-buttons setting-buttons">
+      <li class="setting-buttons__item">
+        <button type="button" class="setting-buttons__btn setting-buttons__btn_blue">
+          Cancel
+        </button>
+        <button type="button" class="setting-buttons__btn setting-buttons__btn_red">
+          Remove
+        </button>
+      </li>
+    </ul>
+  </div>
+</form> 
+{{/if}}

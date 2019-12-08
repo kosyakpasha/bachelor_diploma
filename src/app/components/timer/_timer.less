@@ -1,0 +1,172 @@
+@import ( reference ) "~@less-helpers-module/_mixins.less";
+@import ( reference ) "~@less-helpers-module/_variables.less";
+
+/* TIMER */
+
+.timer,
+.report {
+  position: relative;
+
+  &__prev,
+  &__next {
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%);
+    .btn(@btn-dark, color);
+    font-size: 42/@px;
+  }
+
+  &__prev {
+    left: 37/@px;
+  }
+
+  &__next {
+    right: 37/@px;
+  }
+
+  &__title {
+    .font(@heading-1);
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+
+  &__desc {
+    .font(@subtitle);
+    margin: 25px 0;
+    color: @white;
+    text-align: center;
+  }
+  
+  &__estimate-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15/@px 0 0;
+  }
+
+  &__estimate-item {
+    margin: 0 0 0 9/@px;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
+  &__estimate-pomodoro {
+    .timer__estimate-button {
+      background: url(../../../assets/images/empty-tomato.svg);
+      background-size: cover;
+      background-size: 25/@px 25/@px;
+      width: 25/@px;
+      height: 24/@px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__estimate-pomodoro-finished {
+    .timer__estimate-button {
+      background: url(../../../assets/images/fill-tomato.svg);
+    }
+  }
+
+    &__estimate-pomodoro-failed {
+    .timer__estimate-button {
+      background: url(../../../assets/images/tomato-failed.svg);
+    }
+  }
+
+  &__estimate-icon {
+    font-size: 15/@px;
+    color: @nepal;
+  }
+
+  &__img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 70/@px 0;
+    .font(@timer);
+    color: @white;
+    border-radius: 50%;
+    width: 265/@px;
+    height: 265/@px;
+    text-align: center;
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__time-num {
+    display: block;
+    font-size: 100px;
+    margin: -20px 0;
+  }  
+
+  .timer__time-word {
+    font-size: 15px;
+  }
+
+  &__time-num + .timer__time-word {
+    font-size: 25px;
+  }
+
+  &__last-text {
+    line-height: 35px;
+  }
+}
+
+.timer__work {
+  border: 5/@px solid @work;
+}
+
+.timer__education {
+  border: 5/@px solid @education;
+}
+
+.timer__hobby {
+  border: 5/@px solid @hobby;
+}
+
+.timer__sport {
+  border: 5/@px solid @sport;
+}
+
+.timer__other {
+  border: 5/@px solid @other;
+}
+
+.setting-buttons--timer {
+  margin-top: -50/@px;
+}
+
+.donut {
+  position: absolute;
+  animation-name: donut;
+  animation-timing-function: linear;
+}
+
+.donut-segment {
+  stroke: #8da5b8;
+}
+
+@keyframes donut {
+  from {
+    stroke-dasharray: 0 100;
+  }
+
+  to {
+    stroke-dasharray: 100 0;
+  }
+}
+
+/* TIMER */

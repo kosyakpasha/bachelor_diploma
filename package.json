@@ -1,0 +1,44 @@
+{
+  "name": "pomodoro-app",
+  "description": "RD-LAB Productivity Application",
+  "author": "Iurii Klymiuk",
+  "contributors": [
+    "Andrii Dieiev"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "dependencies": {
+    "@firebase/firestore": "^1.0.3",
+    "babel-polyfill": "^6.26.0",
+    "firebase": "^5.8.1",
+    "highcharts": "^7.0.3",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "handlebars": "^4.1.0",
+    "handlebars-loader": "^1.7.1",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
+    "style-loader": "^0.21.0",
+    "stylelint-config-standard": "^18.2.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.2.1",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}

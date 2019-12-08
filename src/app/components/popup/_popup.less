@@ -1,0 +1,415 @@
+@import ( reference ) "~@less-helpers-module/_mixins.less";
+@import ( reference ) "~@less-helpers-module/_variables.less";
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: @popup-overlay;
+  color: @white;
+
+  &__left-list {
+    position: absolute;
+    left: 0.9375rem;
+    top: 0.8125rem;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50/@px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500/@px;
+    background: @madison;
+    padding: 13/@px 15/@px;
+
+
+    .responsive(@mobile, {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      padding: 0;
+      overflow: scroll;
+    });
+  }
+
+  &__title {
+    .font(@heading-1);
+    margin: 32/@px 0 0;
+    text-align: center;
+  }
+
+  &__label {
+    .font(@popup-input-title);
+    text-transform: uppercase;
+  }
+
+  &__input{
+    display: block;
+    border: 0;
+    background: transparent;
+    .font(@paragraph);
+    margin-top: 17/@px;
+    width: 100%;
+    padding-bottom: 10/@px;
+    .btn(@text-light, color);
+
+    &::placeholder {
+      .btn(@top-menu, color);
+    }
+
+  }
+
+  &__item {
+    margin: 0 35/@px 35/@px;
+    border-bottom: 1/@px solid @nepal;
+
+    .popup__sub-list .popup__label{
+      text-transform: none;
+    }
+  }
+
+  &__left {
+    position: absolute;
+    left: 15/@px;
+    top: 13/@px;
+  }
+
+  &__right-list {
+    position: absolute;
+    right: 15/@px;
+    top: 13/@px;
+    display: flex;
+  }
+
+  &__right-item .popup__right-icon,
+  &__left .popup__icon,
+  .popup__left-icon {
+    font-size: 20/@px;
+  }
+
+  &__right-item {
+    margin-left: 15/@px;
+  }
+
+  &__estimation-list {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 15/@px 0 15/@px;
+  }
+
+  &__estimation-item {
+    margin: 0 9/@px 0 0;
+    padding-bottom: 8/@px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__remove-text {
+    .font(@message);
+    padding: 155/@px 60/@px 105/@px;
+    color: @nepal;
+    text-align: center;
+  }
+
+}
+
+
+.sub-list {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15/@px; 
+  padding-bottom: 8/@px;
+
+  .popup__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background: @nepal;
+    border-radius: 50%;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 2/@px;
+      left: 2/@px;
+      display: none;
+      width: 5/@px;
+      height: 5/@px;
+      border-radius: 50%;
+    }
+  }
+
+  .popup__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked ~ .popup__checkmark {
+      background: transparent;
+    }
+
+    &:checked ~ .popup__checkmark:after {
+      display: block;
+    }
+  }
+
+  .popup__label {
+    display: block;
+    position: relative;
+    padding-left: 24/@px;
+    margin: 0 11/@px 0 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .btn(@top-menu, color);
+  }
+
+  &__item {
+
+    &--active {
+      .popup__label {
+        color: @white;
+      }
+    }
+  }
+}
+
+.radio-btn-color(popup__label--, @category-colors);
+.radio-btn-color(popup__label--, @priorities-color);
+
+.popup__estimation-list:not(:checked) > label {
+  float: right;
+  padding: 0 .1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  line-height: 1.2;
+  background: url("../../../assets/images/empty-tomato.svg") no-repeat;
+  width: 26/@px;
+  height: 20/@px;
+  background-size: 21/@px 20/@px;
+  padding-right: 5/@px;
+}
+
+.popup__estimation-list:not(:checked) > label:last-child {
+  background: url("../../../assets/images/fill-tomato.svg") no-repeat;
+}
+
+.popup__estimation-list input {
+  display: none;
+}
+
+.popup__estimation-list > input:checked ~ label {
+  background: url("../../../assets/images/fill-tomato.svg") no-repeat;
+  width: 26/@px;
+  height: 20/@px;
+  background-size: 21/@px 20/@px;
+}
+
+.popup__estimation-list:not(:checked) > label:hover,
+.popup__estimation-list:not(:checked) > label:hover ~ label {
+  background: url("../../../assets/images/fill-tomato.svg") no-repeat;
+  width: 26/@px;
+  height: 20/@px;
+  background-size: 21/@px 20/@px;
+  opacity: .8;
+}
+
+.popup__estimation-list > input:checked + label:hover,
+.popup__estimation-list > input:checked + label:hover ~ label,
+.popup__estimation-list > input:checked ~ label:hover,
+.popup__estimation-list > input:checked ~ label:hover ~ label,
+.popup__estimation-list > label:hover ~ input:checked ~ label {
+  opacity: 1;
+}
+
+/* datepicker */
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+
+.ui-datepicker-next:hover,
+.ui-datepicker-prev:hover {
+  cursor: pointer;
+}
+
+.ui-datepicker-next:before,
+.ui-datepicker-prev:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ui-datepicker-next:before {
+  content: '>';
+}
+
+.ui-datepicker-prev:before {
+  content: '<';
+}
+
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* Icons */
+.ui-datepicker .ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	left: .5em;
+	top: .3em;
+}
+
+#ui-datepicker-div,
+#ui-datepicker-div a {
+  .font(@popup-input-title);
+  color: @white;
+}
+
+#ui-datepicker-div {
+  background: #2a3f50;
+  border: 1px solid #8da5b8
+}
+
+/* datepicker */

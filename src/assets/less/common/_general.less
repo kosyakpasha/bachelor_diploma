@@ -1,0 +1,77 @@
+@import ( reference ) "~@less-helpers-module/_mixins.less";
+@import ( reference ) "~@less-helpers-module/_variables.less";
+
+body {
+  background: @background-color;
+}
+
+.container {
+  width: 1280px;
+  margin: auto;
+  min-width: 550px;
+
+  .responsive(@tablet, {
+    width: 100%;
+    padding: 0 15px 0 !important;
+  });
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+/* tooltip */
+
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.ui-tooltip, 
+.arrow:after {
+  background: black;
+  border: 2px solid white;
+}
+
+.ui-tooltip {
+  position: absolute;
+  top: 40/@px;
+  left: 40/@px;
+  min-width: 63/@px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 12/@px;
+  background: @task-done;
+  border-radius: 3/@px;
+  padding: 10/@px 15/@px;
+  color: @madison;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid rgba(130, 199, 224, 0.4);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10/@px;
+    left: 17/@px;
+    border: 5/@px solid transparent;
+    border-bottom: 5/@px solid @task-done;
+  }
+}
+
+/* tooltip */
